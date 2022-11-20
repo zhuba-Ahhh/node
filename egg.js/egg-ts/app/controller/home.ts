@@ -23,7 +23,7 @@ export default class HomeController extends Controller {
       },
       app.config.jwt.secret
     );
-    // 生成的token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJpYXQiOjE1NjAzNDY5MDN9.B95GqH-fdRpyZIE5g_T0l8RgzNyWOyXepkLiynWqrJg
+    // 生成的token =
     // 返回 token 到前端
     ctx.body = token;
   }
