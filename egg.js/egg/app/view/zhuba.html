@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="public/css/default.css" />
+</head>
+
+<body>
+    <h2>
+        <%= username %>
+            <%= nowTime %>
+    </h2>
+    <%- include('header.html') %>
+        <h2>
+            id: <%= id%>,name: <%= name%>, age: <%= age%>
+        </h2>
+        <hr />
+        <ul>
+            <% for(let i=0; i < skills.length; i++){ %>
+                <li>
+                    <%= skills[i] %>
+                </li>
+                <% } %>
+        </ul>
+        <hr />
+        <div>
+            <button onclick="add()">增加Cookie</button>
+            <button onclick="del()">删除Cookie</button>
+            <button onclick="editor()">修改Cookie</button>
+            <button onclick="show()">查看Cookie</button>
+        </div>
+        <hr />
+        <h2>测试</h2>
+
+        <ul class="b">
+            <li><a href=""> / </a> \\ <a href="/home"> /home </a></li>
+            <li><a href="/hello"> /hello </a> \\ <a href="/testGetGirl"> /testGetGirl</a></li>
+            <li><a href="/zhuba"> /zhuba</a> \\ <a href="/getGirl"> /getGirl</a></li>
+            <li><a href="/getGirl1/10"> /getGirl1/10</a> \\ <a href="/getGirl2"> /getGirl2</a></li>
+            <li><a href="/getGirls"> /getGirls</a> \\ <a href="/newContext"> /newContext</a></li>
+            <li><a href="/newResponse"> /newResponse </a></li>
+            数据库操作
+            <li><a href="/addG"> /addG </a> \\ <a href="/delG"> /delG </a></li>
+            <li><a href="/updateG"> /updateG </a> \\ <a href="/getG"> /getG </a></li>
+        </ul>
+        <script>
+            function add() {
+                fetch("/add", {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                });
+            }
+            function del() {
+                fetch("/del", {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                });
+            }
+            function editor() {
+                fetch("/editor", {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                });
+            }
+            function show() {
+                fetch("/show", {
+                    method: "post",
+                    headers: {
+                        "Content-type": "application/json"
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body {
+  color: red;
+}
+
+a {
+  text-decoration: none;
+  font-size: larger;
+  color: aqua;
+}
+
+.b {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap
+}

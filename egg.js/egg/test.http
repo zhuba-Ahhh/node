@@ -1,0 +1,23 @@
+# POST http://127.0.0.1:7001/add
+# Content-Type: application/json
+
+# {
+#     "name":"小红"
+# }
+
+# POST http://127.0.0.1:7001/newContext
+# Content-Type: application/json
+
+# {
+#     "name":"小明",
+#     "age":18
+# }
+
+POST http://127.0.0.1:7001/newRequest
+Content-Type: application/json
+token: 'zhuba'
+
+{
+    "name":"小红",
+    "age":18
+}
