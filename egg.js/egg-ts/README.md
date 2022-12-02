@@ -1,5 +1,7 @@
 # hackernews-async-ts
 
+## 含Token校验过程
+
 [Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
 
 ## QuickStart
