@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "cookie-parser": "^1.4.6"
   }
 }
