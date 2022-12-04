@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/fetch/3.6.2/fetch.min.js"></script>
+</head>
+
+<body>
+  <h2>List页面</h2>
+  <div class="title">欢迎来到List页面</div>
+  <h2>
+    ejs语法：-<%=title%>
+  </h2>
+  <form action="/login" method="POST">
+    <div>用户名<input type="text" name="username"></div>
+    <div>密码<input type="text" name="password"></div>
+    <div><input type="submit" value="登陆"></div>
+  </form>
+  <div>
+    <ul id="list">
+    </ul>
+  </div>
+  <script>
+    fetch('/home/data').then(res => res.json()).then(res => {
+      console.log(res);
+      renderId(res, 'list');
+    })
+
+    function renderId(data, id) {
+      let list = data.map(item => `<li>${item}</li>`).join("");
+      console.log(list);
+      let Id = document.querySelector("#" + id);
+      console.log(Id);
+      Id.innerHTML = list;
+    }
+  </script>
+</body>
+
+</html>

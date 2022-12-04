@@ -16,6 +16,8 @@ router.get("/switch", (req, res) => {
 router.get("/bar", (req, res) => {
   res.send("Home-Bar")
 })
-
+router.get("/data", (req, res) => {
+  res.send(['1111', 1111, '1111']);
+})
 
 module.exports = router;
