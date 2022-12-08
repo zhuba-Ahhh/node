@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://cdn.bootcdn.net/ajax/libs/fetch/3.6.2/fetch.js"></script>
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <h1>MongoDB的增删改查</h1>
+  <p>Welcome to <%= title %>
+  </p>
+  <form action="" id="form">
+    <div>用户名：<input type="text" id="username"></div>
+    <div>密码：<input type="password" id="password"></div>
+    <div>年龄：<input type="text" id="age"></div>
+    <button type="submit" id="register">提交</button>
+  </form>
+
+  <script>
+    let register = document.querySelector('#register');
+    let username = document.querySelector('#username');
+    let password = document.querySelector('#password');
+    let age = document.querySelector('#age');
+
+    register.onclick = () => {
+      fetch("/api/user/add", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username.value,
+          password: password.value,
+          age: age.value
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => res.json()).then(res => {
+        console.log(res);
+      })
+    }
+  </script>
+</body>
+
 </html>

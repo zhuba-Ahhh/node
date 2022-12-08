@@ -7,4 +7,12 @@ router.get('/', function (req, res, next) {
   res.send('zhuba');
 });
 
+
+router.post('/user/add', (req, res) => {
+  console.log(req.body);
+  res.send({
+    ok: 1
+  })
+})
+
 module.exports = router;
